@@ -28,7 +28,7 @@ public class CatalogosController {
 	}
 	
 	@GetMapping("/negocios/categorias/{id}")
-	public CatTipoNegocioEntity readTipoNegocio(@PathVariable("idCategoria") Integer idCategoria) {
+	public CatTipoNegocioEntity readTipoNegocio(@PathVariable("id") Integer idCategoria) {
 		return catTipoNegocioService.obtenerTipoNegocioById(idCategoria);
 	}
 
