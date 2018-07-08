@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +22,14 @@ public class CatalogosController {
 	@Autowired
 	private CatTipoNegocioService catTipoNegocioService;
 
-	@GetMapping("/negocios")
+	@GetMapping("/negocios/categorias")
 	public List<CatTipoNegocioEntity> readAllTipoNegocio() {
 		return catTipoNegocioService.obtenerTipoNegocioAll();
+	}
+	
+	@GetMapping("/negocios/categorias/{id}")
+	public CatTipoNegocioEntity readTipoNegocio(@PathVariable("idCategoria") Integer idCategoria) {
+		return catTipoNegocioService.obtenerTipoNegocioById(idCategoria);
 	}
 
 }
