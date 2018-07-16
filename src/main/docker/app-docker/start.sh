@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -Djava.security.egd=file:/dev/./urandom -jar /opt/cuenta-microservice.jar
+java -Djava.security.egd=file:/dev/./urandom -jar /opt/catalogos-microservice.jar
